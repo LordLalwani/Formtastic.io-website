@@ -1,19 +1,30 @@
 import * as React from 'react'
-
+import styled from '@emotion/styled'
+import HeroLanding from './page-components/landing'
+import 'bootstrap/dist/css/bootstrap.min.css'
 import Page from '../components/Page'
-import Container from '../components/Container'
-import IndexLayout from '../layouts'
-import Button from '@material-ui/core/Button'
+import { colors } from '../styles/variables'
+
+const LandingDiv = styled.div`
+  width: auto;
+  height: 100vh;
+  background-color: ${colors.white};
+`
+
+const LandingContainer = styled(Page)`
+  background-color: ${colors.offblack};
+  max-height: 100vh;
+`
+
+const PageContainer = styled.div``
 
 const IndexPage = () => (
-  <IndexLayout>
-    <Page>
-      <Container>
-        <h1>Index</h1>
-        <Button>test</Button>
-      </Container>
-    </Page>
-  </IndexLayout>
+  <PageContainer>
+    <LandingContainer>
+      <HeroLanding />
+    </LandingContainer>
+    <LandingDiv />
+  </PageContainer>
 )
 
 export default IndexPage
