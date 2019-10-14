@@ -1,9 +1,9 @@
-import * as React from 'react'
-import styled from '@emotion/styled'
-import HeroLanding from './page-components/landing'
-import 'bootstrap/dist/css/bootstrap.min.css'
-import Page from '../components/Page'
-import { colors } from '../styles/variables'
+import * as React from "react"
+import styled from "@emotion/styled"
+import HeroLanding from "./page-components/landing"
+import "bootstrap/dist/css/bootstrap.min.css"
+import Page from "../components/Page"
+import { colors } from "../styles/variables"
 
 const LandingDiv = styled.div`
   width: auto;

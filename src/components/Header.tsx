@@ -1,7 +1,7 @@
-import * as React from 'react'
-import * as RB from 'react-bootstrap'
-import '../components/nav.css'
-import styled from '@emotion/styled'
+import * as React from "react"
+import * as RB from "react-bootstrap"
+import "./nav.css"
+import styled from "@emotion/styled"
 
 const NavbarLayout = styled.div`
   @media (min-width: 992px) {
@@ -12,7 +12,7 @@ const NavbarLayout = styled.div`
 `
 const StyledSpan = styled.span`
   color: #53fec8;
-  font-family: 'Arial';
+  font-family: "Arial";
   transition: all 0.38s ease-in-out;
   font-size: 16px;
   font-weight: 600;
@@ -23,7 +23,7 @@ const StyledSpan = styled.span`
 `
 const StyledBrand = styled(RB.Navbar.Brand)`
   color: #53fec8;
-  font-family: 'Arial';
+  font-family: "Arial";
   transition: all 0.38s ease-in-out;
   font-size: 28px;
   font-weight: 600;

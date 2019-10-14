@@ -1,11 +1,12 @@
-import * as React from 'react'
-import styled from '@emotion/styled'
-import bgTL from '../../static/svg/bg-tl.svg'
-import bgBR from '../../static/svg/bg-br.svg'
-import messenger from '../../static/svg/messenger.svg'
-import Header from '../../components/Header'
-import * as RB from 'react-bootstrap'
-import { colors } from '../../styles/variables'
+import * as React from "react"
+import styled from "@emotion/styled"
+import * as RB from "react-bootstrap"
+import bgTL from "../../static/svg/bg-tl.svg"
+import bgBR from "../../static/svg/bg-br.svg"
+import messenger from "../../static/svg/messenger.svg"
+import Header from "../../components/Header"
+import { colors } from "../../styles/variables"
+
 const BgImgLeft = styled.img`
   position: absolute;
   bottom: auto;
@@ -79,10 +80,10 @@ const Landing = () => (
     <BgImgRight src={bgBR} />
     <StyledContainer>
       <StyledRow>
-        <StyledColumn md={true}>
-          <StyledImg src={messenger}></StyledImg>
+        <StyledColumn md>
+          <StyledImg src={messenger} />
         </StyledColumn>
-        <StyledColumn md={true}>
+        <StyledColumn md>
           <h3>We provide the backend</h3>
           <h4>So you can provide flawless communication</h4>
           <p>Simply connect your forms to our service & we'll send you the submissions!</p>

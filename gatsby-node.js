@@ -1,8 +1,10 @@
-'use strict'
+/* eslint-disable strict */
 
-const path = require('path')
+"use strict"
 
-exports.onCreateNode = ({ node, actions, getNode }) => {
+import { resolve } from "path"
+
+export function onCreateNode({ node, actions, getNode }) {
   const { createNodeField } = actions
 
   // Sometimes, optional fields tend to get not picked up by the GraphQL
@@ -10,35 +12,36 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
   // through `createNodeField` so that the fields still exist and GraphQL won't
   // trip up. An empty string is still required in replacement to `null`.
 
+  // eslint-disable-next-line default-case
   switch (node.internal.type) {
-    case 'MarkdownRemark': {
+    case "MarkdownRemark": {
       const { permalink, layout } = node.frontmatter
       const { relativePath } = getNode(node.parent)
 
       let slug = permalink
 
       if (!slug) {
-        slug = `/${relativePath.replace('.md', '')}/`
+        slug = `/${relativePath.replace(".md", "")}/`
       }
 
       // Used to generate URL to view this content.
       createNodeField({
         node,
-        name: 'slug',
-        value: slug || ''
+        name: "slug",
+        value: slug || ""
       })
 
       // Used to determine a page layout.
       createNodeField({
         node,
-        name: 'layout',
-        value: layout || ''
+        name: "layout",
+        value: layout || ""
       })
     }
   }
 }
 
-exports.createPages = async ({ graphql, actions }) => {
+export async function createPages({ graphql, actions }) {
   const { createPage } = actions
 
   const allMarkdown = await graphql(`
@@ -57,6 +60,7 @@ exports.createPages = async ({ graphql, actions }) => {
   `)
 
   if (allMarkdown.errors) {
+    // eslint-disable-next-line no-console
     console.error(allMarkdown.errors)
     throw new Error(allMarkdown.errors)
   }
@@ -75,7 +79,7 @@ exports.createPages = async ({ graphql, actions }) => {
       // template.
       //
       // Note that the template has to exist first, or else the build will fail.
-      component: path.resolve(`./src/templates/${layout || 'page'}.tsx`),
+      component: resolve(`./src/templates/${layout || "page"}.tsx`),
       context: {
         // Data passed to context is available in page queries as GraphQL variables.
         slug
