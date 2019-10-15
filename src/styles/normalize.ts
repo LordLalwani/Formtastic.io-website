@@ -1,5 +1,5 @@
-import { dimensions, fonts, colors, breakpoints } from "./variables"
-import { getEmSize } from "./mixins"
+import { dimensions, fonts, colors, breakpoints } from "./constants";
+import { getEmSize } from "./mixins";
 
 export default `
   html {
@@ -22,14 +22,14 @@ export default `
     overflow-x: hidden;
     overflow-y: scroll;
     font-family: ${fonts.sansSerif};
-    color: ${colors.black};
-    background-color: ${colors.offblack};
+    color: ${colors.generic.black};
+    background-color: ${colors.theme.lightBlack};
     -webkit-text-size-adjust: 100%;
     -ms-text-size-adjust: 100%;
   }
 
   a {
-    color: ${colors.brand};
+    color: ${colors.theme.green};
     text-decoration: none;
 
     &:hover,
@@ -55,7 +55,7 @@ export default `
   table {
     width: 100%;
     margin-bottom: 1rem;
-    border: 1px solid ${colors.ui.light};
+    border: 1px solid ${colors.generic.gray};
     font-size: 85%;
     border-collapse: collapse;
   }
@@ -63,7 +63,7 @@ export default `
   td,
   th {
     padding: .25rem .5rem;
-    border: 1px solid ${colors.ui.light};
+    border: 1px solid ${colors.generic.gray};
   }
 
   th {
@@ -74,10 +74,10 @@ export default `
     tr {
       &:nth-of-type(odd) {
         td {
-          background-color: ${colors.ui.whisper};
+          background-color: ${colors.generic.lightGray};
         }
         tr {
-          background-color: ${colors.ui.whisper};
+          background-color: ${colors.generic.lightGray};
         }
       }
     }
@@ -86,7 +86,7 @@ export default `
   h1, h2, h3, h4, h5, h6 {
     margin-top: 1.414rem;
     margin-bottom: .5rem;
-    color: ${colors.black};
+    color: ${colors.generic.black};
     font-weight: 600;
     line-height: ${dimensions.lineHeight.heading};
     text-rendering: optimizeLegibility;
@@ -115,7 +115,7 @@ export default `
   }
 
   strong {
-    color: ${colors.black};
+    color: ${colors.generic.black};
   }
 
   ul,
@@ -137,14 +137,14 @@ export default `
     position: relative;
     margin: 1.5rem 0;
     border: 0;
-    border-top: 1px solid ${colors.ui.light};
+    border-top: 1px solid ${colors.generic.gray};
   }
 
   blockquote {
     margin: .8rem 0;
     padding: .5rem 1rem;
-    border-left: .25rem solid ${colors.ui.light};
-    color: ${colors.gray.calm};
+    border-left: .25rem solid ${colors.generic.gray};
+    color: ${colors.generic.lightGray};
 
     p {
       &:last-child {
@@ -157,4 +157,4 @@ export default `
       padding-left: 1.25rem;
     }
   }
-`
+`;

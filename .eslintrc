@@ -53,7 +53,7 @@
       {
         "trailingComa": "es5",
         "singleQoute": false,
-        "semi": false,
+        "semi": true,
         "tabWidth": 2,
         "printWidth": 140,
         "trailingComma": "none"

@@ -1,3 +1,5 @@
-import { dimensions } from "./variables"
+import { dimensions } from "./constants";
 
-export const getEmSize = (size: number) => size / dimensions.fontSize.regular
+export const getEmSize = (size: number) => {
+  return size / dimensions.fontSize.regular;
+};
