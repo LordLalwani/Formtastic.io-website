@@ -4,8 +4,9 @@ import * as ReactBootstrap from "react-bootstrap";
 import bgTL from "../../static/svg/bg-tl.svg";
 import bgBR from "../../static/svg/bg-br.svg";
 import messenger from "../../static/svg/messenger.svg";
-import Header from "../../components/Header";
+import Header from "./Header";
 import { colors } from "../../styles/constants";
+import QuickGuide from "./QuickGuide";
 
 const BackgroundImgLeft = styled.img`
   position: absolute;
@@ -74,24 +75,27 @@ const StyledImg = styled.img`
 `;
 
 const Landing = () => (
-  <LandingDiv>
-    <Header />
-    <BackgroundImgLeft src={bgTL} />
-    <BackgroundImgRight src={bgBR} />
-    <StyledContainer>
-      <StyledRow>
-        <StyledColumn md>
-          <StyledImg src={messenger} />
-        </StyledColumn>
-        <StyledColumn md>
-          <h3>We provide the backend</h3>
-          <h4>So you can provide flawless communication</h4>
-          <p>Simply connect your forms to our service & we'll send you the submissions!</p>
-          <ReactBootstrap.Button>Get Started</ReactBootstrap.Button>
-        </StyledColumn>
-      </StyledRow>
-    </StyledContainer>
-  </LandingDiv>
+  <div>
+    <LandingDiv>
+      <Header />
+      <BackgroundImgLeft src={bgTL} />
+      <BackgroundImgRight src={bgBR} />
+      <StyledContainer>
+        <StyledRow>
+          <StyledColumn md>
+            <StyledImg src={messenger} />
+          </StyledColumn>
+          <StyledColumn md>
+            <h3>We provide the backend</h3>
+            <h4>So you can provide flawless communication</h4>
+            <p>Simply connect your forms to our service & we'll send you the submissions!</p>
+            <ReactBootstrap.Button>Get Started</ReactBootstrap.Button>
+          </StyledColumn>
+        </StyledRow>
+      </StyledContainer>
+    </LandingDiv>
+    <QuickGuide />
+  </div>
 );
 
 export default Landing;
