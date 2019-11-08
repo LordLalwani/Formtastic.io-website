@@ -29,6 +29,13 @@ const ContainingDiv = styled(ReactBootstrap.Container)`
     font-weight: 900;
     color: ${colors.theme.lightBlack};
   }
+
+  /* Smartphones (portrait) ----------- */
+  @media only screen and (max-width: 415px) {
+    width: 100%;
+    height: auto;
+    transform: translate(-50%, 0%);
+  }
 `;
 
 const StyledRowHeader = styled(ReactBootstrap.Row)`
@@ -41,9 +48,16 @@ const StyledRowHeader = styled(ReactBootstrap.Row)`
     font-family: "Source Sans Pro", sans-serif;
     color: black;
     font-weight: 900;
-    font-size: 35px;
+    font-size: auto;
+  }
+
+  /* Smartphones (portrait) ----------- */
+  @media only screen and (max-width: 415px) {
+    padding-left: 5%;
+    padding-right: 5%;
   }
 `;
+
 const StyledRow = styled(ReactBootstrap.Row)`
   width: 100%;
   margin: 0px 0px;
@@ -56,6 +70,7 @@ const StyledRow = styled(ReactBootstrap.Row)`
     font-weight: 900;
   }
 `;
+
 const StyledImg = styled(ReactBootstrap.Image)`
   width: 130px;
   height: 130px;
